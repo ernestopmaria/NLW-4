@@ -1,0 +1,26 @@
+Comandos usados durante a criação do projecto.
+
+
+yarn init -y
+yarn add express
+yarn add @types/express -D
+yarn add typescript -D
+yarn tsc --init 
+
+no ficheiro tsconfig fizemos as seguintes mudanças,
+alteramos o "strict": true para => false,
+
+yarn add ts-node-dev -D
+
+adicionamos no ficheiro package.json o codigo abaixo
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts"
+  },
+
+  vamos adiconar no scripts acima o --transpile-only --ignore-watch node_modules
+  ficara da seguinte forma:
+   "scripts": {
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+
+
