@@ -25,6 +25,7 @@ class UserController {
 
         return response.json({ user })
     }
+    as
 
 }
 
