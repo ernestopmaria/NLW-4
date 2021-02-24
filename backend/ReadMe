@@ -1,5 +1,6 @@
 Comandos usados durante a criação do projecto.
 
+// INICIO DO PROJECTO
 
 yarn init -y
 yarn add express
@@ -22,5 +23,46 @@ adicionamos no ficheiro package.json o codigo abaixo
    "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
   },
+
+
+//TESTS
+
+yarn add jest @types/jest -D
+
+yarn jest --init
+
+options selected:
+√ Would you like to use Jest when running "test" script in "package.json"? ... yes
+√ Would you like to use Typescript for the configuration file? ... yes
+√ Choose the test environment that will be used for testing » node
+√ Do you want Jest to add coverage reports? ... no
+√ Which provider should be used to instrument code for coverage? » v8
+√ Automatically clear mock calls and instances between every test? ... yes
+
+on jest.config.ts 
+changes:
+bail : true
+desabble: testEnvironment: "node",
+
+able:
+
+  testMatch: [
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[tj]s?(x)"
+  ],
+  and change to :
+    testMatch: [
+    "**/__tests__/*.test.ts",
+  ],
+
+  create __tests__ folder
+
+
+  install yarn add ts-jest -D
+
+  change the undefined preset to   preset: "ts-jest",
+
+  yarn add supertest @types/supertest -D
+
 
 
