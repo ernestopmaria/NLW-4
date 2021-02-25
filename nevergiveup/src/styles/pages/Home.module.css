@@ -5,6 +5,7 @@
     padding: 2.5rem 2rem ;
     display: flex;
     flex-direction: column;
+    
 }
 
 .container section {
@@ -14,4 +15,13 @@
     grid-template-columns: 1fr 1fr;
     gap:6.25rem
 
+}
+
+@media(max-width:620px){
+    .container section{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        
+    }
 }

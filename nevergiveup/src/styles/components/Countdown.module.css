@@ -53,10 +53,43 @@
   font-size:1.25rem ;
   font-weight: 600;
   transition:background-color 0.2s;
+  outline: 0;
 
 }
 .countdownButton:hover{
   
   background: var(--blue-dark);
 
+}
+
+.countdownButtonStop{
+    width: 100%;
+    height: 5rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 5px;
+  background: var(--white);
+  color:var(--text);
+  font-size:1.25rem ;
+  font-weight: 600;
+  transition:background-color 0.2s;
+  outline: 0;
+ 
+
+}
+.countdownButtonStop:hover{
+  
+  background: var(--red);
+  color:var(--white);
+
+
+}
+.countdownButtonStop:disabled{
+  
+  color:var(--text);
+  background: var(--white);
+  cursor: not-allowed;
 }
