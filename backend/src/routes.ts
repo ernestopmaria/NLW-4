@@ -12,7 +12,7 @@ router.post("/surveys", surveyController.create)
 
 
 
-router.get("/survey", surveyController.show)
+router.get("/surveys", surveyController.show)
 /* router.get("/users", userController.show) */
 
 
