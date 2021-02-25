@@ -19,18 +19,21 @@ class SendMailService {
         })
     }
 
-    async execute(to: string, subject: string) {
-        await this.client.sendMail({
-            from: '"Fred Foo 👻" <foo@example.com>',
-            to: "bar@example.com, baz@example.com",
+    async execute(to: string, subject: string, body:string) {
+       const message= await this.client.sendMail({
+            from: '"NPS" <noreplay@nps.com>',
+            to,
             subject: "Hello ✔",
-            text: "Hello world?",
-            html: "<b>Hello world?</b>",
-        });
+            html: body,
+            
+        })
+        console.log('Message sent : %', message.messageId);
+        console.log('Preview URL : %s', nodemailer.getTestMessageUrl(message))
+
 
     }
 
 
 }
 
-export { SendMailService }
+export  default new SendMailService ();
