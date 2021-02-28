@@ -11,11 +11,21 @@ class AnswerController {
         const surveysUsersRepository = getCustomRepository(SurveyUserRepository);
 
         const surveyUser = await surveysUsersRepository.findOne({
-            id: String(u)
+            id: String(u),
         });
 
-        if (!surveyUser)
+        if (!surveyUser){
+            return response.status(400).json({
+                error :"Survey User does not exists!"
+            });
+        }
+        surveyUser.value = Number(value);
+
+        await surveysUsersRepository.save(surveyUser);
+
+        return response.json(surveyUser);
 
     }
 
 }
+export {AnswerController}

@@ -42,8 +42,8 @@ class SendMailController {
             name: (await user).name,
             title: (await survey).title,
             description: (await survey).description,
-            id: "",
-            link: process.env.URL_MAIL
+            id: (await user).id,
+            link:process.env.URL_MAIL
         };
 
         if (surveyUserAlreadExists) {
